@@ -1,0 +1,39 @@
+# ============================================================
+# Axe C — API & Sécurité
+# Versions épinglées (pip install -r requirements.txt)
+# Vérification vulnérabilités : pip-audit -r requirements.txt
+# Résultat au 2026-09-30 : vulnérabilités corrigées par épinglage
+# (fastapi/starlette 1.7.0, python-jose 3.4.0, pytest 9.0.3) SAUF 4 advisory
+# résiduels sans correctif possible, tous dans la pile RSA/ECDSA de
+# python-jose (imposé par le contrat) : pyasn1 0.4.8 (PYSEC-2026-3455/3456/
+# 3457, fix 0.6.4 bloqué par pyasn1<0.5.0) et ecdsa 0.19.2 (PYSEC-2026-1325).
+# NON EXPLOITABLES ici : seuls des JWT HS256 sont émis et vérifiés,
+# algorithmes épinglés à ["HS256"] dans security.py (jamais ECDSA/RSA).
+# Python 3.11
+# ============================================================
+
+# --- Framework API ---
+fastapi==0.142.2
+starlette==1.7.0
+uvicorn==0.54.0
+pydantic==2.13.5
+python-dotenv==1.2.3                # charge .env local (jamais commité, voir .gitignore)
+
+# --- Sécurité ---
+python-jose[cryptography]==3.4.0   # JWT HS256, expiration 30 min (3.4.0 corrige PYSEC-2024-233)
+bcrypt==4.2.1                      # hachage mots de passe, comparaison temps constant
+slowapi==0.1.9                      # rate limiting (/search, /auth/login, /analyze-text)
+
+# --- Traitement documentaire (axe A, requis pour retrieve) ---
+scikit-learn==1.6.0
+anthropic==0.39.0                   # optionnel : ANTHROPIC_API_KEY
+google-auth==2.59.1                 # ADC : credentials Google Cloud auto-detected
+                                    # (local : gcloud auth application-default login ;
+                                    #  prod : compte de service Cloud Run)
+
+# --- Tests (Axe C) ---
+pytest==9.0.3
+httpx==0.28.1                       # backend TestClient FastAPI
+
+# --- Audit chaîne d'approvisionnement ---
+pip-audit==2.7.3

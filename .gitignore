@@ -1,0 +1,21 @@
+# Secrets — jamais dans le repo (voir .env.example)
+.env
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Node / frontend (axe B)
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# Cles Google Cloud (comptes de service) - ne JAMAIS committer ces fichiers
+service-account*.json
+*-sa-key*.json
+gcp-*.json

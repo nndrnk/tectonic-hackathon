@@ -1,0 +1,17 @@
+[
+  {
+    "username": "alice",
+    "role": "employee",
+    "hashed_password": "$2b$12$hxxXiyPpbImtVwfxcT0DsO.Su5FnVlPH59lnWDQZb5hrS6B91kOmy"
+  },
+  {
+    "username": "bob",
+    "role": "hr",
+    "hashed_password": "$2b$12$6VIbX9BIRdT6csMM.i0ChuiNw1yCWIJcyVBzmTXlUfKR4FZWVWfNe"
+  },
+  {
+    "username": "chloe",
+    "role": "payroll_expert",
+    "hashed_password": "$2b$12$9PInhHwkVlZ4H/S.Xs0rz.epVJB4nKHyynMe7RExy/Y.XRvzwURs."
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "status": "confident",
+  "answer": "Le remboursement des frais de transport est prévu selon la politique interne en vigueur.",
+  "confidence": 100.0,
+  "branches": [
+    {
+      "value": "transport_remboursement_prevu",
+      "claim_text": "Le remboursement des frais de transport est prévu selon la politique interne en vigueur.",
+      "score": 0.83,
+      "share": 100.0,
+      "sources": [
+        {
+          "doc_id": "POL-BE-052",
+          "title": "Politique belge de mobilité — édition 2025",
+          "score": 0.83,
+          "breakdown": {
+            "freshness": 0.9,
+            "authority": 1.0,
+            "owner": 0.3,
+            "country": 1.0
+          },
+          "is_duplicate": false,
+          "quote": "Les frais de transport domicile-travail sont remboursés selon les modalités décrites dans la présente politique.",
+          "needs_review": false,
+          "suspicious": false,
+          "expiring_soon": false
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "reliable_docs_pct": 100.0,
+    "total_docs": 1,
+    "reliable_docs": 1,
+    "duplicates_collapsed": 0
+  },
+  "warnings": [],
+  "suggested_expert": null
+}
